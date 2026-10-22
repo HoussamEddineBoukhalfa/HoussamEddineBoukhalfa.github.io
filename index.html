@@ -7,6 +7,12 @@
 <meta property="og:title" content="Houssam Eddine Boukhalfa">
 <meta property="og:description" content="Machine learning researcher: RL with verifiable rewards, LLM reasoning, world models and efficient LLM training.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://houssameddineboukhalfa.github.io/">
+<meta property="og:image" content="https://houssameddineboukhalfa.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://houssameddineboukhalfa.github.io/assets/og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232E46C8'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' text-anchor='middle' fill='white'%3EHB%3C/text%3E%3C/svg%3E">
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -94,8 +100,8 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-o
 .thesis{font-family:var(--font-display); font-size:var(--step-2); line-height:1.35; margin:0 0 26px; max-width:34ch; text-wrap:pretty}
 .thesis em{font-style:italic; color:var(--accent)}
 .status{
-  display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap;
-  font-size:var(--step--1); padding:7px 12px; border:1px solid var(--rule); border-radius:999px; background:var(--panel)
+  display:inline-flex; align-items:center; gap:10px; flex-wrap:nowrap;
+  font-size:var(--step--1); padding:7px 14px; border:1px solid var(--rule); border-radius:18px; background:var(--panel)
 }
 .status .dot{width:8px; height:8px; border-radius:50%; background:var(--pass); flex:none}
 .links{display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:22px; font-size:var(--step--1)}
@@ -176,9 +182,37 @@ h3{font-size:var(--step-0); font-weight:600; margin:0; line-height:1.4}
 
 footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-family:var(--font-mono); font-size:0.75rem; color:var(--muted)}
 
+/* Portrait, buttons, news, figure, BibTeX */
+.portrait{width:168px; height:168px; border-radius:50%; object-fit:cover; display:block; border:1px solid var(--rule); background:var(--panel)}
+.rail-place{display:block; margin-top:14px}
+.actions{display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-top:22px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:var(--step--1);
+  text-decoration:none; padding:8px 14px; border-radius:4px; border:1px solid var(--accent); color:var(--accent); background:transparent
+}
+.btn.primary{background:var(--accent); color:var(--paper)}
+.btn:hover{text-decoration:none; filter:brightness(1.08)}
+.news{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+.news li{display:grid; grid-template-columns:6.5rem minmax(0,1fr); gap:14px; align-items:baseline}
+.news time{font-family:var(--font-mono); font-size:var(--step--1); color:var(--muted); font-variant-numeric:tabular-nums}
+.paper-fig{margin:4px 0 0; display:grid; gap:8px}
+.paper-fig img{width:100%; max-width:560px; height:auto; border:1px solid var(--rule); border-radius:4px; background:#fff}
+.paper-fig figcaption{font-size:var(--step--1); color:var(--muted); max-width:62ch}
+details.bib{margin-top:8px}
+details.bib summary{cursor:pointer; font-family:var(--font-mono); font-size:var(--step--1); color:var(--accent); list-style:none; display:inline-block}
+details.bib summary::-webkit-details-marker{display:none}
+details.bib summary::before{content:"+ "}
+details.bib[open] summary::before{content:"− "}
+.bib-box{position:relative; margin-top:8px}
+.bib-box pre{margin:0; padding:12px 14px; background:var(--panel); border:1px solid var(--rule); border-radius:4px; overflow-x:auto; font-family:var(--font-mono); font-size:0.78rem; line-height:1.5; color:var(--ink)}
+.bib-box .copy{position:absolute; top:8px; right:8px}
+
 @media (max-width: 760px){
   .hero .wrap, section.block .wrap{grid-template-columns:minmax(0,1fr)}
-  .hero .rail{display:none}
+  .hero .rail{display:flex; align-items:center; gap:14px; padding-top:0; margin-bottom:22px}
+  .portrait{width:88px; height:88px}
+  .rail-place{margin-top:0}
+  .news li{grid-template-columns:minmax(0,1fr); gap:2px}
   .hero .wrap{padding-block:36px 28px}
   .label{margin-bottom:10px}
   .bar-row, .scale{grid-template-columns:5.6rem minmax(0,1fr) 3.2rem 1rem; gap:8px}
@@ -210,12 +244,16 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <div class="rail">Paris-Saclay, France</div>
+      <div class="rail"><img class="portrait" src="assets/photo.jpg" alt="Portrait of Houssam Eddine Boukhalfa" width="168" height="168"><span class="rail-place">Paris-Saclay, France</span></div>
       <div>
         <h1>Houssam Eddine Boukhalfa</h1>
         <p class="role">Machine learning researcher · M2 Data Science, Université Paris-Saclay</p>
         <p class="thesis">I train language models against checkers that can prove an answer <em>right or wrong</em>, and study what the models actually learn from them.</p>
         <span class="status"><span class="dot" aria-hidden="true"></span>Looking for a 6-month research internship from late March 2027</span>
+        <div class="actions">
+          <a class="btn primary" href="Houssam_Eddine_Boukhalfa_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="btn" href="mailto:b.houssameddine19@gmail.com">Email me</a>
+        </div>
         <div class="links">
           <a href="https://scholar.google.com/citations?hl=en&amp;user=AIDN__oAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
           <a href="https://github.com/HoussamEddineBoukhalfa" target="_blank" rel="noopener">GitHub</a>
@@ -246,6 +284,22 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
     </div>
   </section>
 
+  <section class="block" id="news" aria-labelledby="news-h">
+    <div class="wrap">
+      <p class="label">News</p>
+      <div class="content">
+        <h2 id="news-h">Recent updates</h2>
+        <ul class="news">
+          <li><time datetime="2026-10">Oct 2026</time><span>Our EMNLP 2026 Findings paper on counterexample generation is <a href="https://arxiv.org/abs/2610.02444" target="_blank" rel="noopener">on arXiv</a>, with the SymCE dataset, verifiers and <a href="https://github.com/ce-rlvr/SymCE" target="_blank" rel="noopener">code</a>.</span></li>
+          <li><time datetime="2026-09">Sept 2026</time><span>Started the M2 Data Science (TRIED) at Université Paris-Saclay.</span></li>
+          <li><time datetime="2026-06">June 2026</time><span>Graduated from ENSIA with an engineering degree and a Master 2 in AI and Data Science; final-year thesis graded 17.5/20 (<a href="https://www.youtube.com/watch?v=bSE1iEER_-Q" target="_blank" rel="noopener">defense video</a>).</span></li>
+          <li><time datetime="2025-12">Dec 2025</time><span>First-author paper on Arabic children's story generation at the Muslims in ML Workshop, NeurIPS 2025.</span></li>
+          <li><time datetime="2025-09">Sept 2025</time><span>Joined Nojoom.AI as R&amp;D Engineer and AI Team Lead, and LIX (École Polytechnique) as a research intern.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="results" aria-labelledby="results-h">
     <div class="wrap">
       <p class="label">Results</p>
@@ -266,6 +320,10 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
             </ul>
             <div class="scale" aria-hidden="true"><span></span><span><span>0</span><span>0.5</span><span>1</span></span><span></span><span></span></div>
             <p class="note">Supervised fine-tuning learned the answer format but lost the logic; RL with verifier rewards brought it back. The 4B model beat every evaluated 7B open math specialist. <a href="https://arxiv.org/abs/2610.02444" target="_blank" rel="noopener">Paper</a></p>
+            <figure class="paper-fig">
+              <img src="assets/imitation-trap.png" alt="Figure 1 of the paper: on a true theorem about continuous convergence, the SFT model still proposes the counterexample f_n(x) = x^n, which violates the theorem's assumptions; the RLVR-sparse model recognises the theorem as true." width="690" height="480" loading="lazy">
+              <figcaption>Figure 1 of the paper. The theorem is true, yet the SFT model still fabricates a counterexample; the model trained with a sparse verifier reward recognises it as true.</figcaption>
+            </figure>
           </div>
 
           <div class="entry">
@@ -311,7 +369,7 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
     <div class="wrap">
       <p class="label">Publications</p>
       <div class="content">
-        <h2 id="pub-h" class="visually-plain">Papers</h2>
+        <h2 id="pub-h">Papers</h2>
         <ol class="list" reversed>
           <li class="pub">
             <p class="title">Counterexample Generation via Per-Theorem Symbolic Verifiers: When Imitation Hurts and Reinforcement Repairs</p>
@@ -323,6 +381,18 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
               <a href="https://openreview.net/forum?id=gkyPWpRNyd" target="_blank" rel="noopener">OpenReview</a>
               <a href="https://github.com/ce-rlvr/SymCE" target="_blank" rel="noopener">Code</a>
             </div>
+            <details class="bib">
+              <summary>BibTeX</summary>
+              <div class="bib-box"><pre id="bib1">@inproceedings{zouak2026counterexample,
+  title     = {Counterexample Generation via Per-Theorem Symbolic Verifiers:
+               When Imitation Hurts and Reinforcement Repairs},
+  author    = {Zouak, Omar Farouk and Boukhalfa, Houssam Eddine and
+               Lakehal, Soumaya and Katiyar, Shiv and Nefti-Meziani, Samia},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
+  year      = {2026},
+  note      = {arXiv:2610.02444}
+}</pre><button class="copy" type="button" data-copy="bib1">Copy</button></div>
+            </details>
           </li>
           <li class="pub">
             <p class="title">Crafting Culturally Aligned Narratives: Large Language Models for Arabic Children's Story Generation</p>
@@ -332,6 +402,16 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
               <a href="https://openreview.net/pdf?id=C3Rdf47byE" target="_blank" rel="noopener">PDF</a>
               <a href="https://drive.google.com/file/d/1eW0UTpa3X4PYmJvGhulYQFaqx5kaaqMO/view" target="_blank" rel="noopener">Demo</a>
             </div>
+            <details class="bib">
+              <summary>BibTeX</summary>
+              <div class="bib-box"><pre id="bib2">@inproceedings{boukhalfa2025crafting,
+  title     = {Crafting Culturally Aligned Narratives: Large Language Models
+               for Arabic Children's Story Generation},
+  author    = {Boukhalfa, Houssam Eddine and Mani, S. and Said Chikh, L.},
+  booktitle = {Muslims in ML Workshop at NeurIPS 2025},
+  year      = {2025}
+}</pre><button class="copy" type="button" data-copy="bib2">Copy</button></div>
+            </details>
           </li>
         </ol>
         <p class="small muted" style="margin-top:22px">In preparation: a paper on detecting information influence operations on TikTok, from my work at LIX, École Polytechnique.</p>
@@ -493,13 +573,14 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
       <div class="content">
         <h2 id="contact-h">Get in touch</h2>
         <div class="contact-line">
-          <span class="email" id="email">b.houssameddine19@gmail.com</span>
+          <a class="email" id="email" href="mailto:b.houssameddine19@gmail.com">b.houssameddine19@gmail.com</a>
           <button class="copy" id="copy-email" type="button">Copy email</button>
         </div>
         <div class="links" style="margin-top:0">
           <a href="https://scholar.google.com/citations?hl=en&amp;user=AIDN__oAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
           <a href="https://github.com/HoussamEddineBoukhalfa" target="_blank" rel="noopener">GitHub</a>
           <a href="https://www.linkedin.com/in/houssam-eddine-boukhalfa-873636287/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="Houssam_Eddine_Boukhalfa_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
         </div>
       </div>
     </div>
@@ -507,7 +588,7 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
 </main>
 
 <footer>
-  <div class="wrap">Last updated October 2026</div>
+  <div class="wrap">Last updated 22 October 2026</div>
 </footer>
 
 <script>
@@ -534,6 +615,21 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
         selectText(); btn.textContent = 'Selected, press Ctrl+C';
       }
     }catch(e){ selectText(); btn.textContent = 'Selected, press Ctrl+C'; }
+  });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('button[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.getAttribute('data-copy'));
+      if(!el) return;
+      var text = el.textContent;
+      var reset = function(){ setTimeout(function(){ btn.textContent = 'Copy'; }, 1600); };
+      try{
+        navigator.clipboard.writeText(text).then(function(){ btn.textContent = 'Copied'; reset(); }, function(){ btn.textContent = 'Select & Ctrl+C'; reset(); });
+      }catch(e){ btn.textContent = 'Select & Ctrl+C'; reset(); }
+    });
   });
 })();
 </script>
