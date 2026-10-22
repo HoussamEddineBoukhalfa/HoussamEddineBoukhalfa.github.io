@@ -198,6 +198,10 @@ footer .wrap{padding-block:28px 40px; border-top:1px solid var(--rule); font-fam
 .paper-fig{margin:4px 0 0; display:grid; gap:8px}
 .paper-fig img{width:100%; max-width:560px; height:auto; border:1px solid var(--rule); border-radius:4px; background:#fff}
 .paper-fig figcaption{font-size:var(--step--1); color:var(--muted); max-width:62ch}
+.before-after{margin:10px 0 0; display:grid; grid-template-columns:repeat(2, minmax(0, 220px)); gap:12px}
+.before-after figure{margin:0; display:grid; gap:6px}
+.before-after img{width:100%; height:auto; aspect-ratio:330 / 580; object-fit:cover; border:1px solid var(--rule); border-radius:4px; background:var(--panel)}
+.before-after figcaption{font-family:var(--font-mono); font-size:0.75rem; color:var(--muted)}
 details.bib{margin-top:8px}
 details.bib summary{cursor:pointer; font-family:var(--font-mono); font-size:var(--step--1); color:var(--accent); list-style:none; display:inline-block}
 details.bib summary::-webkit-details-marker{display:none}
@@ -530,6 +534,16 @@ details.bib[open] summary::before{content:"− "}
             <p class="title">Roman mosaic restoration with GANs</p>
             <p class="authors">2025 · Stanford University, supervised by Dr Mourad Bouache</p>
             <p class="venue-line">A GAN with a Vision Transformer and contextual attention that restores damaged Roman mosaics.</p>
+            <div class="before-after">
+              <figure>
+                <img src="assets/mosaic-before.jpg" alt="Roman mosaic with a large damaged area on the right of its central medallion" width="330" height="580" loading="lazy">
+                <figcaption>Damaged original</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/mosaic-after.jpg" alt="The same mosaic after restoration by the model, with the damaged area filled in to match the surrounding pattern" width="330" height="580" loading="lazy">
+                <figcaption>Restored by the model</figcaption>
+              </figure>
+            </div>
             <div class="linkrow">
               <a href="https://drive.google.com/file/d/14qo3XGZxnRJYo3_Zqf1xJ6rwXWeC-8xt/view" target="_blank" rel="noopener">Demo</a>
               <a href="https://www.researchgate.net/publication/391738904_Semantic-Aware_Generative_Adversarial_Networks_for_Enhanced_Roman_Mosaic_Restoration" target="_blank" rel="noopener">Preprint</a>
